@@ -41,7 +41,7 @@ function updateDisplay(userId) {
   const bookmarkData = getData(userId);
 
   if (!bookmarkData || bookmarkData.length === 0) {
-    displayMessage.textContent = `Bookmarks not found for this user`;
+    displayMessage.textContent = `No bookmarks found for this user`;
     return;
   }
 
