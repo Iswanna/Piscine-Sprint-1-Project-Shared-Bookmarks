@@ -7,8 +7,6 @@ const displayMessage = document.createElement("p");
 displayMessage.id = "status-message";
 appContainer.appendChild(displayMessage);
 
-console.log("select:", userSelect);
-
 const initUser = () => {
   const ids = getUserIds();
 
