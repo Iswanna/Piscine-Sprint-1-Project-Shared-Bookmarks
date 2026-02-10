@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shared Bookmarks</title>
-    <script type="module" src="script.js" defer></script>
+    <script type="module" src="src/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -13,6 +13,27 @@
 
     <main id="app">
         <!-- Content will be injected here -->
+         <section id="add-new-bookmark">
+            <h2>Add Bookmark</h2>
+            <form id="add-bookmark-form">
+                <div>
+                    <label for="bookmark-url">URL</label>
+                    <input id="bookmark-url" name="url" type="url" required/>
+                </div>
+
+                 <div>
+                    <label for="bookmark-title">Title</label>
+                    <input id="bookmark-title" name="title" type="text" required/>
+                </div>
+
+                 <div>
+                    <label for="bookmark-description">Description</label>
+                    <textarea  id="bookmark-description" name="description" type="description" required></textarea>
+                </div>
+
+                <button type="submit">Add Bookmark</button>
+            </form>
+         </section>
     </main>
 </body>
 </html>
