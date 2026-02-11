@@ -37,8 +37,8 @@ export function renderBookmarks(userId) {
     const copyBtn = cloneTemplate.querySelector(".copy-btn");
 
     copyBtn.addEventListener("click", () => {
-        copyToClipboard(bookmark.url, copyBtn);
-    })
+      copyToClipboard(bookmark.url, copyBtn);
+    });
 
     // Find the "Description Element" and fill it with data
     const descriptionElement = cloneTemplate.querySelector(
