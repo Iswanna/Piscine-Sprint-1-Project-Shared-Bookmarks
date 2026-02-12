@@ -1,5 +1,6 @@
 import { getData } from "./storage.js";
 import { copyToClipboard } from "./copyToClipboard.js";
+import { sortBookmarksByTimestamp } from "./utils.js";
 
 export function renderBookmarks(userId) {
   const containerForBookmarks = document.getElementById("bookmarks-container");
@@ -17,9 +18,7 @@ export function renderBookmarks(userId) {
   }
 
   // Sort the array of bookmark objects in a reverse chronological order (Newest first)
-  const sortedBookmarks = [...bookmarksForOneUser].sort(
-    (a, b) => b.createdAt - a.createdAt,
-  );
+  const sortedBookmarks = sortBookmarksByTimestamp(bookmarksForOneUser);
 
   // Loop through and render
   sortedBookmarks.forEach((bookmark) => {
