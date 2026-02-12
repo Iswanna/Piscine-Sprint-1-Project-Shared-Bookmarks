@@ -9,7 +9,7 @@ export const copyToClipboard = async (url, copyButton) => {
   try {
     if (!copyButton) return;
 
-    await navigator.clipboard.writeText(url); //copies the text
+    await navigator.clipboard.writeText(url);
 
     const originalText = copyButton.textContent;
     copyButton.textContent = `Copied!`;
@@ -21,7 +21,6 @@ export const copyToClipboard = async (url, copyButton) => {
       copyButton.disabled = false;
     }, 2000);
   } catch (err) {
-    console.error(`Clipboard error:`, err);
     alert(`Failed to copy to clipboard`);
   }
 };
