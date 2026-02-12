@@ -4,5 +4,5 @@
  * @returns {Array<Object>} - Sorted array of bookmarks (does not mutate original)
  */
 export function sortBookmarksByTimestamp(bookmarks) {
-    return [...bookmarks].sort((a, b) => b.createdAt - a.createdAt);
-  }
+  return [...bookmarks].sort((a, b) => b.createdAt - a.createdAt);
+}
