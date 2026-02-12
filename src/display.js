@@ -1,6 +1,7 @@
 import { getData } from "./storage.js";
 import { handleLike } from "./bookmark-likes.js";
 import { copyToClipboard } from "./copyToClipboard.js";
+import { sortBookmarksByTimestamp } from "./utils.js";
 
 export function renderBookmarks(userId) {
   const containerForBookmarks = document.getElementById("bookmarks-container");
@@ -11,16 +12,14 @@ export function renderBookmarks(userId) {
 
   const bookmarksForOneUser = getData(userId);
 
-  // Handle emtpy or null state
+  // Handle empty or null state
   if (bookmarksForOneUser === null || bookmarksForOneUser.length === 0) {
     containerForBookmarks.textContent = "No bookmarks found";
     return; // Stop the function here
   }
 
   // Sort the array of bookmark objects in a reverse chronological order (Newest first)
-  const sortedBookmarks = [...bookmarksForOneUser].sort(
-    (a, b) => b.createdAt - a.createdAt,
-  );
+  const sortedBookmarks = sortBookmarksByTimestamp(bookmarksForOneUser);
 
   // Loop through and render
   sortedBookmarks.forEach((bookmark) => {
@@ -65,8 +64,6 @@ export function renderBookmarks(userId) {
       handleLike(userId, bookmark.createdAt);
     });
 
-    // Set up Copy Button placeholder (to help with Issue 6)
-    copyBtn.dataset.url = bookmark.url;
 
     // Append the clone to the container
     containerForBookmarks.appendChild(cloneTemplate);
