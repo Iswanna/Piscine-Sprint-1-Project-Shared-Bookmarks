@@ -66,7 +66,6 @@ export function renderBookmarks(userId) {
     });
 
     // Set up Copy Button placeholder (to help with Issue 6)
-    const copyBtn = cloneTemplate.querySelector(".copy-btn");
     copyBtn.dataset.url = bookmark.url;
 
     // Append the clone to the container
