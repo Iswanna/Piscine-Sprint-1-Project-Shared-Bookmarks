@@ -17,14 +17,14 @@ This is a collaborative bookmarking application developed as part of the CodeYou
 
 1. Clone this repository.
 2. Ensure you have Node.js installed.
-3. Open your terminal in the project directory and run:
+3. Open your terminal in the project root directory and run:
    ```bash
    npm install
-   npx http-server .
+   npx http-server
    ```
 4. Open `http://localhost:8080` in your browser.
 
-##Accessibility
+## Accessibility
 
 This project achieves a score of 100 for Accessibility in Google Lighthouse.
 
